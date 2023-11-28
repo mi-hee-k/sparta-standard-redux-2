@@ -12,7 +12,12 @@ const TodoList = ({ isDone, inputs }) => {
         {todos
           .filter((todo) => todo.isDone === isDone)
           .map((todo) => (
-            <TodoItem key={todo.id} todo={todo} inputs={inputs} />
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              inputs={inputs}
+              isDone={isDone}
+            />
           ))}
       </ul>
     </ScTodoWrapper>

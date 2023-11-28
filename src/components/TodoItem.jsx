@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import Button from './UI/Button';
 
-const TodoItem = ({ todo, inputs }) => {
+const TodoItem = ({ todo, inputs, isDone }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -45,7 +45,7 @@ const TodoItem = ({ todo, inputs }) => {
       <p>{todo.contents}</p>
       <div>
         <Button onClick={() => switchHandler(todo.id)} bgColor='#FF7878'>
-          완료
+          {isDone ? '취소' : '완료'}
         </Button>
         <Button onClick={() => deleteHandler(todo.id)}>삭제</Button>
       </div>
