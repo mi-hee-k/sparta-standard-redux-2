@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Button from './UI/Button';
 
 const AddForm = ({ addHandler, inputs, changeHandler }) => {
   return (
@@ -26,7 +27,7 @@ const AddForm = ({ addHandler, inputs, changeHandler }) => {
           onChange={changeHandler}
         />
       </div>
-      <button>등록</button>
+      <Button bgColor='#FF7878'>등록</Button>
     </ScFormWrapper>
   );
 };

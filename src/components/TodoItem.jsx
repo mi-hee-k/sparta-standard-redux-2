@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { deleteTodo, switchTodo } from '../redux/modules/todo';
 import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
+import Button from './UI/Button';
 
 const TodoItem = ({ todo, inputs }) => {
   const dispatch = useDispatch();
@@ -43,10 +44,14 @@ const TodoItem = ({ todo, inputs }) => {
       <h3>{todo.title}</h3>
       <p>{todo.contents}</p>
       <div>
-        <button onClick={() => switchHandler(todo.id)}>완료</button>
-        <button onClick={() => deleteHandler(todo.id)}>삭제</button>
+        <Button onClick={() => switchHandler(todo.id)} bgColor='#FF7878'>
+          완료
+        </Button>
+        <Button onClick={() => deleteHandler(todo.id)}>삭제</Button>
       </div>
-      <button onClick={() => moveToDetail(todo.id)}>상세페이지 가기</button>
+      <Button onClick={() => moveToDetail(todo.id)} bgColor='#4f7e03'>
+        상세페이지 가기
+      </Button>
     </ScTodoItemWrapper>
   );
 };

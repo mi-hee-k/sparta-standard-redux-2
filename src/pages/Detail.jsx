@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
 import { deleteTodo } from '../redux/modules/todo';
 import styled from 'styled-components';
+import Button from '../components/UI/Button';
 
 const Detail = () => {
   const todos = useSelector((state) => state.todos);
@@ -33,8 +34,10 @@ const Detail = () => {
           <p>{todo.contents}</p>
           <p>상태 : {todo.isDone ? '완료' : '미완'}</p>
           <div>
-            <button onClick={moveToHome}>이전화면으로</button>
-            <button onClick={deleteHandler}>삭제</button>
+            <Button onClick={moveToHome} bgColor='#FF7878'>
+              이전화면으로
+            </Button>
+            <Button onClick={deleteHandler}>삭제</Button>
           </div>
         </ScDetailWraaper>
       ))}
